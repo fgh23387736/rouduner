@@ -25,7 +25,7 @@
             BMAP_NORMAL_MAP,
             BMAP_HYBRID_MAP
         ]}));     
-    map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
+    map.setCurrentCity("唐山");          // 设置地图显示的城市 此项是必须设置的
     map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
 
     function addMarker(point,name){
