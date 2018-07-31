@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::get('/test', function () {
     return "nihao";
 });
+
+Route::get('/myTest', function () {
+    return view('myMap');
+});
