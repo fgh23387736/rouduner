@@ -22,3 +22,15 @@ Route::get('/test', function () {
 Route::get('/myTest', function () {
     return view('myMap');
 });
+
+Route::get('/games', function () {
+    return view('game');
+});
+
+Route::get('/game/tankBattle', function () {
+    return view('tankBattle');
+});
+
+Route::get('/game/moleGame', function () {
+    return view('moleGame');
+});
