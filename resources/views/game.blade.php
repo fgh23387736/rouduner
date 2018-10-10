@@ -305,7 +305,7 @@ kbd {
 }
 
 * {
-	-webkit-print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
 }
 @media screen and (min-width: 914px) {
     body {
@@ -314,12 +314,12 @@ kbd {
     }
 }
 @media print {
-	table, pre {
-		page-break-inside: avoid;
-	}
-	pre {
-		word-wrap: break-word;
-	}
+  table, pre {
+    page-break-inside: avoid;
+  }
+  pre {
+    word-wrap: break-word;
+  }
 }
 </style>
 
@@ -357,6 +357,7 @@ kbd {
 <ul>
 <li>移动:上下左右键</li>
 <li>开火:空格</li>
+<li>切换第一人称和第三人称:Q</li>
 </ul></li>
 <li><p>道具</p>
 

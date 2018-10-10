@@ -23,6 +23,10 @@ Route::get('/myTest', function () {
     return view('myMap');
 });
 
+Route::get('/myMap', function () {
+    return view()->file('/public/test.html');
+});
+
 Route::get('/games', function () {
     return view('game');
 });
@@ -34,3 +38,14 @@ Route::get('/game/tankBattle', function () {
 Route::get('/game/moleGame', function () {
     return view('moleGame');
 });
+
+Route::get('/personTree', function () {
+    return view('personTree/personTree');
+});
+
+Route::get('/personTree/eachNode/{id}', function ($id) {
+    return view('personTree/eachNode')->with('id',$id);
+});
+
+Route::get('/personTree/getTree', 'PersonTreeController@getTree');
+Route::any('/personTree/setTree', 'PersonTreeController@setTree');
