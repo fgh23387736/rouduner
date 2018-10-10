@@ -91,7 +91,7 @@
                     dataType: "json",
                     success: function(data) {
                         datascource = data;
-                        if(datascource == undefined || datascource == null){
+                        if(datascource == undefined || datascource == null || datascource == ''){
                             datascource = {
                                 name : '无',
                                 phone : '',

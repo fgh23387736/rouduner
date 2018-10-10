@@ -17,14 +17,23 @@ class PersonTreeController extends Controller
      * @return Response
      */
     public function getTree()
-    {
-        return Storage::get('public/personTree.json');
+    {   
+        if(Storage::exists('public/personTree.json')){
+            return Storage::get('public/personTree.json');
+        }else{
+            $data = [];
+            $data['id'] = -1;
+            $data['name'] = '无';
+            return json_encode($data);
+        }
+        
     }
 
     public function setTree(Request $request)
     {
         $content = $request->all();
         Storage::put('public/personTree.json', json_encode($content['data']));
+        
         return "";
     }
 }
