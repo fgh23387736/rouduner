@@ -91,6 +91,15 @@
                     dataType: "json",
                     success: function(data) {
                         datascource = data;
+                        if(datascource == undefined || datascource == null){
+                            datascource = {
+                                name : '无',
+                                phone : '',
+                                money : '',
+                                remark : '',
+                                id : -1
+                            }
+                        }
                         setChart()
                     }
                 });
