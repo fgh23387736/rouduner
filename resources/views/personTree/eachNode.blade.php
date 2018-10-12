@@ -5,7 +5,7 @@
 	<title>Document</title>
 	<link rel="stylesheet" href="/layui/css/layui.css">
 </head>
-<body>
+<body style="padding: 10px;">
 	<form class="layui-form layui-form-pane" action="" lay-filter="example">
   <div class="layui-form-item">
     <label class="layui-form-label">姓名</label>
@@ -34,11 +34,13 @@
       <textarea placeholder="请输入内容" class="layui-textarea" name="remark" ></textarea>
     </div>
   </div>
-  <div class="layui-form-item">
-  	<button class="layui-btn layui-btn-normal" lay-submit="" lay-filter="add-left" id="addleft">增加左节点</button>
-    <button class="layui-btn" lay-submit="" lay-filter="save">保存</button>
-    <button class="layui-btn layui-btn-danger" lay-submit="" lay-filter="delete">删除</button>
-    <button class="layui-btn layui-btn-normal" lay-submit="" lay-filter="add-right" id="addright">增加右节点</button>
+  <div class="layui-form-item ">
+  	<div class="layui-btn-container">
+	  	<button class="layui-btn layui-btn-normal" lay-submit="" lay-filter="add-left" id="addleft">增加节点</button>
+	    <button class="layui-btn" lay-submit="" lay-filter="save">保存</button>
+	    <button class="layui-btn layui-btn-danger" lay-submit="" lay-filter="delete">删除</button>
+	    <!-- <button class="layui-btn layui-btn-normal" lay-submit="" lay-filter="add-right" id="addright">增加右节点</button> -->
+	</div>
   </div>
 </form>
           
@@ -91,26 +93,18 @@
 			return false;
 		});
 		form.on('submit(delete)', function(data){
-			// var parentNode = getTheNodeById(theData,dataList[nodeId].parentId);
-
-			// for (var i = parentNode.children.length - 1; i >= 0; i--) {
-			// 	if(parentNode.children[i].id == nodeId){
-			// 		// delete parentNode.children[i];
-			// 		parentNode.children[i].children = []
-			// 		parentNode.children[i].name = '无'
-			// 		parentNode.children[i].phone = ''
-			// 		parentNode.children[i].title = ''
-			// 		parentNode.children[i].money = ''
-			// 		parentNode.children[i].remark = ''
-			// 		break;
-			// 	}
-			// }
-			nowNode.children = []
-			nowNode.name = '无'
-			nowNode.phone = ''
-			nowNode.money = ''
-			nowNode.remark = ''
-			parent.save(closeThisIframe());
+			layer.confirm('删除后其下所有节点都将会被删除，确定删除？', {
+			  	btn: ['确定','取消'] //按钮
+			}, function(){
+			  	nowNode.children = []
+				nowNode.name = '无'
+				nowNode.phone = ''
+				nowNode.money = ''
+				nowNode.remark = ''
+				parent.save(closeThisIframe());
+			}, function(){
+			  
+			});
 			return false;
 		});
 		form.on('submit(add-right)', function(data){

@@ -154,7 +154,7 @@
                                   title: data.name,
                                   closeBtn: 1, //不显示关闭按钮
                                   shade: [0],
-                                  area: ['400px', '400px'],
+                                  area: ['400px', '430px'],
                                   offset: 'auto', 
                                   anim: 2,
                                   content: ['/personTree/eachNode/' + data.id,'no'], //iframe的url，no代表不显示滚动条
